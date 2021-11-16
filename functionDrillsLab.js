@@ -6,6 +6,12 @@
 
 //CODE HERE
 
+function helloWorld(){
+  console.log('hello, World!')
+  return
+}
+
+helloWorld()
 
 ////////////////// PROBLEM 2 ////////////////////
 /*
@@ -16,6 +22,11 @@
 
 //CODE HERE
 
+function printName(name){
+  console.log(name)
+  return
+}
+printName('cade')
 
 ////////////////// PROBLEM 3 ////////////////////
 /*
@@ -30,6 +41,11 @@
 
 //CODE HERE
 
+function greeting(name){
+  let newGreeting = String(name)
+  console.log(`hello, ${name}`)
+}
+greeting('cade')
 
 ////////////////// PROBLEM 4 ////////////////////
 /*
@@ -41,6 +57,14 @@
 
 //CODE HERE
 
+function add(num1, num2){
+  newNum1 = Number(num1)
+  newNum2 = Number(num2)
+  console.log(newNum1 + newNum2)
+  return
+}
+
+let sum = add(5,8)
 
 ////////////////// PROBLEM 5 ////////////////////
 /*
@@ -52,6 +76,16 @@
 */
 
 //CODE HERE
+
+function nameCheck(name){
+  if (name.includes('steven')){
+  console.log('What is up Steven?')
+  }else if(name.includes('bryan')){
+    console.log('Hey Bryan!')
+  }else console.log(`Cool name, ${name}`)
+}
+
+nameGreeting = nameCheck('Cade')
 
 
 ////////////////// PROBLEM 6 ////////////////////
@@ -66,6 +100,23 @@
 
 //CODE HERE
 
+function faveColorFinder(color){
+  
+  let newcolor = String(color)
+  if (color.includes('red')){
+    console.log('red is a great color')
+  }else if (color.includes('green')){
+    console.log('green is a solid favorite color')
+  }else if (color.includes('black')){
+    console.log('so trendy')
+  }else{
+    console.log('you need to evaluate your favorite color choice')
+  }
+
+}
+
+
+let colorRating = faveColorFinder('black')
 
 ////////////////// PROBLEM 7 ////////////////////
 let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
@@ -77,7 +128,14 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 
 //CODE HERE
 
+function passingInTheNamesArry(namesArr){
+  for(let i = 0; i < namesArr.length; i++){
+    console.log(namesArr[i])
+  }
+return
+}
 
+let arrName = passingInTheNamesArry(namesArr)
 ////////////////// PROBLEM 8 ////////////////////
 /*
   Create a function called thatsOdd that takes in a single argument (a number).
@@ -88,6 +146,15 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 
 //CODE HERE
 
+function thatsOdd(number){
+  if(number % 2 === 0){
+    console.log('that is not odd!')
+  }else{
+    console.log('that is odd indeed!')
+  }
+}
+
+let oddChecker = thatsOdd(5)
 
 ////////////////// PROBLEM 9 ////////////////////
 let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
@@ -102,7 +169,20 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 
 //CODE HERE
 
+function bigOrSmall(arr){
+  let answers = []
+  for(let i = 0; i < arr.length; i++){
+    if (arr[i] > 100) {
+      answers.push("Big")
+    }else {
+      answers.push('small')
+    }  
+  }
+  return answers
+}
+let arrayEvaluator = bigOrSmall(bigOrSmallArray)
 
+console.log(arrayEvaluator)
 ////////////////// PROBLEM 10 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
 let loser = 'Glimmer'
@@ -113,6 +193,18 @@ let loser = 'Glimmer'
 
 //CODE HERE
 
+function theEliminator(contestants, loser) {
+  for (let i = 0; i < contestants.length; i++) {
+    if (contestants[i] === loser) {
+      contestants.splice(i, 1)
+    }
+  }
+  return contestants
+}
+
+let newContestants = theEliminator(contestants, loser)
+
+console.log(newContestants)
 
 ////////////////// PROBLEM 11 ////////////////////
 let sampleString = "Hi, my name is Kylo."
@@ -123,6 +215,14 @@ let sampleString = "Hi, my name is Kylo."
 
 //CODE HERE
 
+function string(sampleString){
+  let newSampleString = sampleString.toUpperCase()
+  return newSampleString
+}
+
+let newString = string(sampleString)
+
+console.log(newString)
 
 ////////////////// PROBLEM 12 ////////////////////
 /*
@@ -135,6 +235,20 @@ let sampleString = "Hi, my name is Kylo."
   return 'must provide a valid email address'
 */
 
+// CODE HERE
+
+function emailCheck(email){
+ let updatedEmail = String(email)
+ let newEmail = updatedEmail.trim()
+ if (newEmail.includes('@')){
+   return ('email verified')
+ }
+ return ('must provide a valid email address')
+}
+
+let finalEmail = emailCheck('caderasmussen@gmail.com')
+
+console.log(finalEmail)
 ////////////////// PROBLEM 13 ////////////////////
 /*
   Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
@@ -143,7 +257,14 @@ let sampleString = "Hi, my name is Kylo."
 
 //CODE HERE
 
+function tooManyFrogs(gold){
+  return (gold /3)
 
+
+}
+let totalFrogs = tooManyFrogs(50)
+
+console.log(totalFrogs)
 ////////////////// PROBLEM 14 ////////////////////
 /*
   You might have noticed a slight bug in problem 12. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in problem 12 (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
@@ -151,7 +272,20 @@ let sampleString = "Hi, my name is Kylo."
 
 //CODE HERE
 
+function tooManyFrogs2(gold){
+  if(gold % 3 === 0){
+  return (gold / 3)
+  }else if ((gold - 1) % 3 === 0){
+    return (gold - 1) / 3
+  }else {
+    return (gold - 2) / 3
+  }
 
+}
+
+let totalFrogs2 = tooManyFrogs2(50)
+
+console.log(totalFrogs2)
 ////////////////// PROBLEM 15 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 /*
@@ -159,6 +293,19 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 */
 
 //CODE HERE
+
+function isAscending(arr){
+  for(let i = 0; i < arr.length - 1; i++){
+    if(arr[i] > arr[i + 1]){
+      return false
+    }
+  }
+  return true
+}
+
+let arrayIsAscending = isAscending(sampleArray)
+
+console.log(arrayIsAscending)
 
 
 ////////////////// PROBLEM 16 ////////////////////
@@ -183,13 +330,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ['Duck']
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ['Duck', 'rubberDuck']
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ['Duck', 'rubberDuck', 'sailorDuck']
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ['Duck', 'realDuck']
